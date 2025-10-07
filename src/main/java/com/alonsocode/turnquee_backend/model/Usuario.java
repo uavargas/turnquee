@@ -15,9 +15,10 @@ import lombok.*;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)// Genera un ID autoincremental
-    private String id;
+    private Long id;
     private String nombre;
     private String apellido;
+    @Column(unique = true, nullable = false, length = 10)
     private String documentoIdentidad;
     private String correo;
 
